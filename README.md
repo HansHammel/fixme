@@ -16,13 +16,19 @@ In order to use Fixme all you need to do is install it:
 
 > npm install -g fixme
 
-###CLI Usage:
+### CLI Usage:
 
-Typing 
+For help type
 
-> fixme
+```sh
+fixme --help
+```
 
-in a directroy will search all `.js` files in all subdirectories except some preconfigured once _(vendors/**, vendor/**, bower_components/**, jspm_packages/**, node_modules/**)_
+```sh
+fixme
+```
+
+will search the current directory for all `.js` files in all subdirectories except some preconfigured once _(vendors/**, vendor/**, bower_components/**, jspm_packages/**, node_modules/**)_
 
 Note: Passing custom options from the command line is currently not supported.
 

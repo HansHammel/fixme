@@ -83,7 +83,7 @@
 
             ignoredDirectories.forEach(function (directoryPattern) {
                 if (shouldIgnoreDirectory) return;
-                shouldIgnoreDirectory = minimatch(fileInformation.path, directoryPattern);
+                shouldIgnoreDirectory = minimatch(fileInformation.path, directoryPattern, { dot: true });
             });
 
             if (!shouldIgnoreDirectory) {
@@ -97,7 +97,7 @@
             letTheFileThrough = !(shouldIgnoreDirectory || (!shouldIgnoreDirectory && shouldIgnoreFile));
 
             // Never let binary files through, searching them for comments will make no sense...
-            if (letTheFileThrough && isBinaryFile(fileInformation.fullPath)) {
+            if (letTheFileThrough && isBinaryFile.sync(fileInformation.fullPath)) {
                 letTheFileThrough = false;
             }
 
