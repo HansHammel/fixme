@@ -46,8 +46,12 @@ describe('fixme', function () {
             line_length_limit: 1000,
             color: true
         }, function (out) {
-        	fs.writeFileSync(path.join('c:','f','out.txt'),JSON.stringify(process.env, null, 2),'utf8');
-            var filecontent = fs.readFileSync(path.join(__dirname, 'fixme.withcolor.' + (os.EOL === "\r\n" ? 'crlf' : 'lf') + '.txt'), 'utf8');
+        	  //fs.writeFileSync(path.join(__dirname,'out.txt'),JSON.stringify(process.env, null, 2),'utf8');
+        	  var filecontent;
+        	  if (process.env.PAAS_NAME == "strider")
+        	    filecontent = fs.readFileSync(path.join(__dirname, 'fixme.withcolor.emu.' + (os.EOL === "\r\n" ? 'crlf' : 'lf') + '.txt'), 'utf8');
+        	  else
+        	    filecontent = fs.readFileSync(path.join(__dirname, 'fixme.withcolor.' + (os.EOL === "\r\n" ? 'crlf' : 'lf') + '.txt'), 'utf8');
             //reset console before assertion, so mocha can print
             delete console.log;
             expect(out.trim()).to.equal(filecontent.trim());
