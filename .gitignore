@@ -3,6 +3,7 @@
 
 #IDEs
 .idea/
+*.bak
 
 # Logs
 logs*/
