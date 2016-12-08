@@ -322,7 +322,9 @@
                         fileMessages.total_lines = currentFileLineNumber;
 
                         var output = logMessages(fileMessages);
-                        cb(output);
+                        // if there is an output go on, if the file hase no matches (messages) go on
+                        if (output)
+                          cb(output);
                     });
 
                     callback();
