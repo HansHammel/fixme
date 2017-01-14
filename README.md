@@ -2,6 +2,16 @@
 
 Scan for NOTE, OPTIMIZE, OPTIMISE, TODO, HACK, XXX, FIXME, and BUG comments within your source, and print them to stdout so you can deal with them. This is similar to the ```rake notes``` task from Rails.
 
+[![Build Status](https://travis-ci.org/HansHammel/fixme.svg?branch=master)](https://travis-ci.org/HansHammel/fixme)
+[![Inline docs](http://inch-ci.org/github/HansHammel/fixme.svg?branch=master)](http://inch-ci.org/github/HansHammel/fixme)
+[![star this repo](http://githubbadges.com/star.svg?user=HansHammel&repo=fixme&style=flat&color=fff&background=007ec6)](https://github.com/HansHammel/fixme)
+[![fork this repo](http://githubbadges.com/fork.svg?user=HansHammel&repo=fixme&style=flat&color=fff&background=007ec6)](https://github.com/HansHammel/fixme/fork)
+[![david dependency](https://img.shields.io/david/HansHammel/fixme.svg)](https://david-dm.org/HansHammel/fixme)
+[![david devDependency](https://img.shields.io/david/dev/HansHammel/fixme.svg)](https://david-dm.org/HansHammel/fixme)
+[![david optionalDependency](https://img.shields.io/david/optional/HansHammel/fixme.svg)](https://david-dm.org/HansHammel/fixme)
+[![david peerDependency](https://img.shields.io/david/peer/HansHammel/fixme.svg)](https://david-dm.org/HansHammel/fixme)
+[![Known Vulnerabilities](https://snyk.io/test/github/HansHammel/fixme/badge.svg)](https://snyk.io/test/github/HansHammel/fixme)
+
 It ends up giving you an output like this:
 
 ![](http://i.imgur.com/OXsTtCZ.png)
