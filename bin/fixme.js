@@ -90,14 +90,14 @@
                 filesToScan.forEach(function (filePattern) {
                     if (!shouldIgnoreFile) return;
 
-                    shouldIgnoreFile = !(minimatch(fileInformation.name, filePattern));
+                    shouldIgnoreFile = !(minimatch(fileInformation.basename, filePattern));
                 });
             }
 
             letTheFileThrough = !(shouldIgnoreDirectory || (!shouldIgnoreDirectory && shouldIgnoreFile));
 
             // Never let binary files through, searching them for comments will make no sense...
-            if (letTheFileThrough && isBinaryFile.sync(fileInformation.fullPath)) {
+            if (letTheFileThrough && isBinaryFile.isBinaryFileSync(fileInformation.fullPath)) {
                 letTheFileThrough = false;
             }
 
@@ -271,10 +271,10 @@
          * Reads through the configured path scans the matching files for messages.
          */
         var scanAndProcessMessages = function(cb) {
-            var stream = readdirp({
-                root: scanPath,
-                fileFilter: fileFilterer
-            });
+            var stream = readdirp(
+                scanPath,
+                { fileFilter: fileFilterer }
+            );
 
             // TODO: Actually do something meaningful/useful with these handlers.
             stream
